@@ -7,3 +7,5 @@ The single fuzz harness (`src/fuzz_seedcheck.c`) has three distinct branches for
 starter seeds `CAT` / `DOG` / `FOO`, plus a nested byte cascade the fuzzer extends so the
 corpus grows within a run. Seeds are wired the one sanctioned way:
 `file://mayhem/<target>/testsuite` + the server-accumulated `testsuite.tar`.
+
+<!-- kick Actions workflow registration -->
