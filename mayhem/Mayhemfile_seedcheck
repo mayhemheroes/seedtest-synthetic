@@ -1,0 +1,13 @@
+# Synthetic seed-load/accumulation probe. Seeds wired the ONE sanctioned way:
+#   - server-accumulated corpus (grows across runs; dropping it is the #124 freeze)
+#   - per-target local starter seeds at the canonical path file://mayhem/<target>/testsuite
+#     (RELATIVE — resolves against the CI package dir `.`; absolute file:///mayhem/... aborts #158).
+# Per-target metadata (seeds, and any *.dict) lives under mayhem/<target>/.
+project: seedtest-synthetic
+target: seedcheck
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/seedcheck/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_seedcheck
+    libfuzzer: true
