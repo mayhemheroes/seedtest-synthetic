@@ -105,3 +105,5 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --image ${{ needs.build.outputs.image }} --file ${{ matrix.mayhemfile }} --duration ${{ inputs.duration || '1200' }}
+
+# (registered)
